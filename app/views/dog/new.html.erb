@@ -1,12 +1,21 @@
 <h2>Input Your good doggy</h2>
-
-<%= form_with model: @dogs do |f|%>
-    <%= f.label :name %>
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error|%>
+        <h5><%= error %></h5>
+    <% end %>
+<% end %>
+<%= form_with url: "/dog", method: :post do |f| %>
+    <%= f.label :name %>:
     <%= f.text_field :name%><br><br>
 
-    <%= f.label :age %>
+    <%= f.label :age %>:
     <%= f.text_field :age %><br><br>
 
-    <%= f.label :breed %>
+    <%= f.label :breed %>:
     <%= f.text_field :breed %><br><br>
+
+    <%= f.label :bio %>:
+    <%= f.text_field :bio%><br><br>
+
+    <%= f.submit :Add%>
 <% end %>
