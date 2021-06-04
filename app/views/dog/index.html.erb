@@ -1,0 +1,11 @@
+<h3>All the Good Boys and Girls you need </h3>
+<br>
+
+<% @dogs.each do |dog| %>
+        <h3><%= dog.name %><h3>
+        <ul>
+            Breed: <li><h5><%= dog.breed %></h5></li>
+            Age: <li><h5><%= dog.age %></h5></li>
+            Bio: <li><h5><%= dog.bio %></h5></li>
+        </ul>
+<% end %>
