@@ -4,6 +4,7 @@
         <h5><%= error %></h5>
     <% end %>
 <% end %>
+<h2>Form with text fields</h2>
 <%= form_with url: "/dog", method: :post do |f| %>
     <%= f.label :name %>:
     <%= f.text_field :name%><br><br>
@@ -17,5 +18,24 @@
     <%= f.label :bio %>:
     <%= f.text_field :bio%><br><br>
 
-    <%= f.submit :Add%>
+    <%= f.submit :Add %>
 <% end %>
+
+<h2>Form with using select tags</h2>
+<%= form_with url: "/dog", method: :post do |f|%>
+    <%= f.label :name %>
+    <%= select_tag(:name, options_for_select(["Lily", "Cali", "Raven"])) %><br>
+
+    <%= f.label :breed %>
+    <%= f.select(:breed, ["Golden Retriever", "Labrador", "Shitzu"]) %><br>
+
+    <%= f.label :age %>
+    <%= f.select(:age, ["1", "2", "3", "4", "5"])%><br>
+
+    <%= f.color_field :favorite_color%>
+
+    <%= f.telephone_field :hidden %>
+    <%= f.submit :Add %>
+<% end %>
+
+<h2>Form with </h2>
