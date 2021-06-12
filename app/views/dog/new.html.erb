@@ -22,7 +22,7 @@
 <% end %>
 
 <h2>Form with using select tags</h2>
-<%= form_with url: "/dog", method: :post do |f|%>
+<%= form_with url: "/dog", method: :post do |f| %>
     <%= f.label :name %>
     <%= f.select(:name, ["Lily", "Cali", "Raven"]) %><br>
 
@@ -38,4 +38,19 @@
     <%= f.submit :Add %>
 <% end %>
 
-<h2>Form with </h2>
+<h2>Form with fields</h2>
+<%= form_with url: "/dog", method: :post do |f| %>
+    <%= f.label :age%>
+    <%= f.number_field :age%><br>
+
+    <%= f.label :range %>
+    <%= f.range_field :range %><br>
+
+    <%= f.label :week %>
+    <%= f.week_field :week%><br>
+
+    <%= f.label :date %>
+    <%= f.date_field :date %>
+
+    <%= f.submit %>
+<% end %>
