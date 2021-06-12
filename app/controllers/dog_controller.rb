@@ -12,7 +12,6 @@ class DogController < ApplicationController
     end
 
     def create
-        byebug
         @dog = Dog.create(name: params["name"], breed: params["breed"], bio: params[:bio], age: params[:age])
         if @dog.valid? 
             redirect_to dog_index_url
